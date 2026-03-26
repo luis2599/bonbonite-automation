@@ -257,6 +257,12 @@ public class basicSteps {
         return elemento;
     }
 
+    public void loginUsuario( By documento, By contrasena, By botonIniciSesion, int numDocumento, String pass){
+        escribirNumero(documento, numDocumento);
+        escribirTexto(contrasena, pass);
+        click(botonIniciSesion);
+    }
+
     // metodo para hacer scroll hacia un elemento web utilizando un localizador
     public void scrollHaciaElemento(By locator) {
         WebElement elemento = encontrar(locator);

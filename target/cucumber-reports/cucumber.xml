@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="22.801" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-25T17:08:27.464090300Z">
-<testcase classname="Registro de usuario" name="Registro exitoso" time="22.614">
+<testsuite name="Cucumber" time="11.696" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-26T05:02:25.348872Z">
+<testcase classname="Registro de usuario" name="Actualizacion de datos de usuario" time="11.465">
 <system-out><![CDATA[
 Given El cliente ingresa a la pagina de bon-bonite..........................passed
-And El cliente se dirige a la seccion de usuarios...........................passed
-Given El cliente da clic en la opcion registrate............................passed
-And Ingresa los datos del formulario de registro como numero de documento, Nombre, Apellido.passed
-And Ademas ingresa un correo electronico y la contraseña....................passed
-When Una vez ingresado los datos, procesede a leer y aceptar la autorizacion de tratamiento de datos personales.passed
-And Finalmente procede a dar clic en boton registrar........................passed
-Then El cliente verifica que su nombre sea el correcto......................passed
+When El cliente hace clic en el menu de categoria Zapatos...................passed
+Then El sistema muestra el listado de productos con imagen..................passed
+And El usuario puede seleccionar un producto para ver su detalle............passed
 ]]></system-out>
 </testcase>
 </testsuite>

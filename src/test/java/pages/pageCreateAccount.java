@@ -1,18 +1,17 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class pageCreateAccount extends basicSteps {
 
     // Variables de configuración
     String url = config.get("url.base");
     int timeout = config.getInt("timeout.explicit");
-    int numDocumento = config.getInt("numero_documento");
-    String nombre = config.get("nombre");
-    String apellido = config.get("apellido");
-    String correo = config.get("correo");
-    String pass = config.get("pass");
+    int numDocumento = config.getInt("numero_documento_EP1");
+    String nombre = config.get("nombre_EP1");
+    String apellido = config.get("apellido_EP1");
+    String correo = config.get("correo_EP1");
+    String pass = config.get("pass_EP1");
 
     // Elementos locators
     By userButton = locators.registro.userButton;
@@ -36,11 +35,11 @@ public class pageCreateAccount extends basicSteps {
 
     public void startSession() {
         navigateTo(url);
-        esperarCargaCompletaPagina(timeout);
         limpiarCache();
     }
 
     public void startUser() {
+        esperarCargaCompletaPagina(timeout);
         click(userButton);
     }
 
@@ -76,12 +75,16 @@ public class pageCreateAccount extends basicSteps {
         click(botonIniciSesion);
     }
 
-    public boolean ValidacionRegistroUser() {
+    public boolean validacionRegistroUser() {
         //login();
         esperar(timeout, nombreRegistrado);
         try {
             String texto = driver.findElement(nombreRegistrado).getText();
-            return texto.contains(nombre);
+            if (texto.equals(nombre)) {
+                return true;
+            }else{
+                return false;
+            }
         } catch (Exception e) {
             return false;
         }
